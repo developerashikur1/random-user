@@ -1,4 +1,3 @@
-
 const loadUsers = () => {
     fetch('https://randomuser.me/api/?results=500')
         .then(res => res.json())
@@ -6,7 +5,6 @@ const loadUsers = () => {
 
 };
 loadUsers();
-
 
 const displayUsers = results => {
     // just for images change
@@ -24,32 +22,26 @@ const displayUsers = results => {
         `;
 
         userImageDiv.appendChild(div);
-
-
         // this part for change by button
         // street
-        document.getElementById('street').addEventListener('click', function () {
+        document.getElementById('street').addEventListener('mouseover', function () {
             document.getElementById('name-title').innerText = `My address is`;
             document.getElementById('name').innerText = `${result.location.street.name}, ${result.location.street.number}`;
         })
         // city
-        document.getElementById('city').addEventListener('click', function () {
+        document.getElementById('city').addEventListener('mouseover', function () {
             document.getElementById('name-title').innerText = `My City is`;
             document.getElementById('name').innerText = `${result.location.city}`;
         })
         // coordinates
-        document.getElementById('coordinates').addEventListener('click', function () {
+        document.getElementById('coordinates').addEventListener('mouseover', function () {
             document.getElementById('name-title').innerText = `My coordinates is`;
             document.getElementById('name').innerText = `(${result.location.coordinates.latitude}), (${result.location.coordinates.longitude})`;
         })
         // timezone
-        document.getElementById('timezone').addEventListener('click', function () {
+        document.getElementById('timezone').addEventListener('mouseover', function () {
             document.getElementById('name-title').innerText = `My timezone is`;
             document.getElementById('name').innerText = `(${result.location.timezone.offset}), ${result.location.timezone.description}`;
         })
     })
-
-
 };
-
-
